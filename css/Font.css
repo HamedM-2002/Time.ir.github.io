@@ -1,0 +1,48 @@
+@font-face {
+    font-family: IranSansLight;
+    src: url(../fonts/IRANSansLight.woff) format(woff);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: IranSansBold;
+    src: url(../fonts/IRANSansBold.woff) format(woff);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: IranBold;
+    src: url(../fonts/IranBold.woff) format(woff);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Poppins-600;
+    src: url(../fonts/Poppins-600.woff2) format(woff2);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: FontIcon;
+    src: url(../fonts/FontIcon.woff) format(woff);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: DM-Sans-Regular;
+    src: url(../fonts/DM-Sans-regular.woff2) format(woff2);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: DM-Sans-800;
+    src: url(../fonts/DM-Sans-800.woff2) format(woff2);
+    font-style: normal;
+    font-weight: normal;
+}

@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="FA" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hamed">
+    <meta name="description" content="Exercise Project 1">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap">
+    <title>ساعت و تقویم ایران</title>
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="css/Style.css" type="text/css" rel="stylesheet">
+    <link href="css/Font.css" type="text/css" rel="stylesheet">
+    <link href="css/clock.css" type="text/css" rel="stylesheet">
+    <link href="css/digital.css" type="text/css" rel="stylesheet">
+    <link href="css/gs-lowlevel.css" type="text/css" rel="stylesheet">
+    <link href="fontawesome-free-6.6.0-web/css/all.css" rel="stylesheet">
+    <link href="fontawesome-free-6.6.0-web/css/fontawesome.css" rel="stylesheet">
+    <link href="fontawesome-free-6.6.0-web/css/solid.css" rel="stylesheet">
+    <link href="fontawesome-free-6.6.0-web/css/brands.css" rel="stylesheet">
+</head>
+
+<body data-theme="light">
+    <main class="general-wrap col-12">
+        <header class="col-12" id="header">
+            <section class="container row flex-container alignitems-center">
+                <div class="col-6">
+                    <label class="switch">
+                        <input type="checkbox" id="themeToggle">
+                        <div class="switch-panel round">
+                            <div class="key round">
+                                <span class="switch-active"><i class="fa-solid fa-moon"></i></span>
+                                <span class="switch-deactive"><i class="fa-solid fa-sun"></i></span>
+                            </div>
+                        </div>
+                        <script src="js/theme.js"></script>
+                    </label>
+                </div>
+                <div class="col-6">
+                    <a href="Index.html"><img src="images/248_orig.svg" alt="Logo" title="time.ir"
+                            class="responsive-image top-logo"></a>
+                </div>
+            </section>
+        </header>
+        <main class="fullbody col-12">
+            <div class="container">
+                <div class="row">
+                    <section class="topwrapper col-12">
+                        <div class="col-12 d-flex">
+                            <div class="col-1 panel-heading">
+                                <h2>تاریخ امروز</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-10 dates">
+                                    <div class="col-3">
+                                        <h2>خورشیدی</h2>
+                                        <hr>
+                                        <span>۱۴۰۳/۰۷/۱۲</span>
+                                        <span>پنج شنبه - ۱۲ مهر ۱۴۰۳</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <h2>میلادی</h2>
+                                        <hr>
+                                        <span>2024-10-03</span>
+                                        <span>Thursday - 2024 03 October</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <h2>قمری</h2>
+                                        <hr>
+                                        <span>۱۴۴۶/۰۳/۲۹</span>
+                                        <span>الخميس - ٢٩ ربيع الاول ١٤٤٦</span>
+                                    </div>
+                                    <div class="col-3">
+                                        <h2>برج فلکی</h2>
+                                        <hr>
+                                        <span>میزان</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time col-12 row">
+                            <div class="clocks col-6">
+                                <div class="analog-clock col-12">
+                                    <div class="clock">
+                                        <div class="wrap">
+                                            <span class="hour"></span>
+                                            <span class="minute"></span>
+                                            <span class="second"></span>
+                                            <span class="dot"></span>
+                                        </div>
+                                    </div>
+                                    <script src="js/clock.js"></script>
+                                </div>
+                                <div class="digital-clock col-12">
+                                    <div id="MyClockDisplay" class="d-clock" onload="showTime()"></div>
+                                    <script src="js/digital.js"></script>
+                                </div>
+                            </div>
+                            <div class="times col-6">
+                                <h2 class="col-12">اوقات شرعی به افق شهر ها</h2>
+                                <hr>
+                                <form action="#" class="cities col-12">
+                                    <main class="flex-container alignitems-center justifycontent-spacearound"
+                                        style="height: 100px;">
+                                        <select class="state col-5" name="state" onChange="irancitylist(this.value);">
+                                            <option value="0">لطفا استان را انتخاب نمایید</option>
+                                            <option value="تهران">تهران</option>
+                                            <option value="گیلان">گیلان</option>
+                                            <option value="آذربایجان شرقی">آذربایجان شرقی</option>
+                                            <option value="خوزستان">خوزستان</option>
+                                            <option value="فارس">فارس</option>
+                                            <option value="اصفهان">اصفهان</option>
+                                            <option value="خراسان رضوی">خراسان رضوی</option>
+                                            <option value="قزوین">قزوین</option>
+                                            <option value="سمنان">سمنان</option>
+                                            <option value="قم">قم</option>
+                                            <option value="مرکزی">مرکزی</option>
+                                            <option value="زنجان">زنجان</option>
+                                            <option value="مازندران">مازندران</option>
+                                            <option value="گلستان">گلستان</option>
+                                            <option value="اردبیل">اردبیل</option>
+                                            <option value="آذربایجان غربی">آذربایجان غربی</option>
+                                            <option value="همدان">همدان</option>
+                                            <option value="کردستان">کردستان</option>
+                                            <option value="کرمانشاه">کرمانشاه</option>
+                                            <option value="لرستان">لرستان</option>
+                                            <option value="بوشهر">بوشهر</option>
+                                            <option value="کرمان">کرمان</option>
+                                            <option value="هرمزگان">هرمزگان</option>
+                                            <option value="چهارمحال و بختیاری">چهارمحال و بختیاری</option>
+                                            <option value="یزد">یزد</option>
+                                            <option value="سیستان و بلوچستان">سیستان و بلوچستان</option>
+                                            <option value="ایلام">ایلام</option>
+                                            <option value="کهگلویه و بویراحمد">کهگلویه و بویراحمد</option>
+                                            <option value="خراسان شمالی">خراسان شمالی</option>
+                                            <option value="خراسان جنوبی">خراسان جنوبی</option>
+                                            <option value="البرز">البرز</option>
+                                        </select>
+                                        <select name="city" class="city col-5" id="city">
+                                            <option value="0">لطفا ابتدا استان را انتخاب نمایید</option>
+                                        </select>
+                                        <script language="javascript" src="js/city.js"></script>
+                                    </main>
+                                </form>
+                                <div class="city-times col-12">
+                                    <div class="right col-6">
+                                        <div class="col-9">
+                                            <img src="icon-font-svg/icons8-sun-144.svg" alt="azan sobh"
+                                                class="responsive-image">
+                                            <h2>اذان صبح</h2>
+                                            <span> ۰۴:۴۰ </span>
+                                        </div>
+                                        <div class="col-9">
+                                            <img src="icon-font-svg/icons8-sunrise-96.svg" alt="sunrise"
+                                                class="responsive-image">
+                                            <h2>طلوع خورشید</h2>
+                                            <span> ۰۶:۰۵ </span>
+                                        </div>
+                                        <div class="col-9">
+                                            <img src="icon-font-svg/icons8-midday-96.svg" alt="azan zohr"
+                                                class="responsive-image">
+                                            <h2>اذان ظهر</h2>
+                                            <span> ۱۱:۵۲ </span>
+                                        </div>
+                                    </div>
+                                    <div class="left col-6">
+                                        <div class="col-9">
+                                            <img src="icon-font-svg/icons8-sunset-96.svg" alt="sunset"
+                                                class="responsive-image">
+                                            <h2>غروب خورشید</h2>
+                                            <span> ۱۷:۳۹ </span>
+                                        </div>
+                                        <div class="col-9">
+                                            <img src="icon-font-svg/icons8-moon-100 (1).svg" alt="azan maghreb"
+                                                class="responsive-image">
+                                            <h2>اذان مغرب</h2>
+                                            <span> ۱۷:۵۶ </span>
+                                        </div>
+                                        <div class="col-9">
+                                            <img src="icon-font-svg/icons8-moon-100.svg" alt="midnight"
+                                                class="responsive-image">
+                                            <h2>نیمه شب شرعی</h2>
+                                            <span> ۲۳:۱۰ </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <article class="daily-sentence col-12">
+                                <div class="col-12 row flex-container alignitems-center">
+                                    <div class="col-1"><i class="fa-solid fa-quote-left"></i></div>
+                                    <span class="col-11">
+                                        زندگی شاد غیرممکن است؛ بهترین زندگی که بشر می تواند به دست آورد،
+                                        زندگی شجاعانه است.
+                                    </span>
+                                </div>
+                                <a
+                                    href="https://fa.wikipedia.org/wiki/%D8%A2%D8%B1%D8%AA%D9%88%D8%B1_%D8%B4%D9%88%D9%BE%D9%86%D9%87%D8%A7%D9%88%D8%B1">آرتور
+                                    شوپنهاور
+                                </a>
+                            </article>
+                    </section>
+                </div>
+                <section class="diary col-12 row">
+                    <section class="right col-5" style="padding: 0;">
+                        <section class="calendar col-12">
+                            <div class="calendar-header col-12 flex-container">
+                                <div class="prev-month col-3"><i class="fa-solid fa-arrow-right"></i> ماه قبل</div>
+                                <div class="change-date col-6 row">
+                                    <span class="select-month col-6"><i class="fa-solid fa-angle-down"></i>مهر</span>
+                                    <span class="select-year col-6">۱۴۰۳ <i class="fa-solid fa-angle-down"></i></span>
+                                    <br>
+                                    <span class="gregorian col-12">September - October 2024</span> <br>
+                                    <span class="ghamari col-12">ربيع الاول - ربيع الثاني - ١٤٤٦</span>
+                                </div>
+                                <div class="next-month col-3">ماه بعد <i class="fa-solid fa-arrow-left"></i></div>
+                            </div>
+                            <div class="week-days col-12 flex-container justifycontent-spacearound">
+                                <div>ش</div>
+                                <div>ی</div>
+                                <div>د</div>
+                                <div>س</div>
+                                <div>چ</div>
+                                <div>پ</div>
+                                <div>ج</div>
+                            </div>
+                            <div class="week col-12 flex-container justifycontent-spacebetween">
+                                <div class="day holiday disabled">
+                                    <div class="jalali col-12">۳۱</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">21</div>
+                                        <div class="qamari">١٧</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۱</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">22</div>
+                                        <div class="qamari">١٨</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۲</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">23</div>
+                                        <div class="qamari">١٩</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۳</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">24</div>
+                                        <div class="qamari">٢٠</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۴</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">25</div>
+                                        <div class="qamari">٢١</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۵</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">26</div>
+                                        <div class="qamari">٢٢</div>
+                                    </div>
+                                </div>
+                                <div class="day holiday">
+                                    <div class="jalali col-12">۶</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">27</div>
+                                        <div class="qamari">٢٣</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="week col-12 flex-container justifycontent-spacebetween">
+                                <div class="day">
+                                    <div class="jalali col-12">۷</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">28</div>
+                                        <div class="qamari">٢٤</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۸</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">29</div>
+                                        <div class="qamari">٢٥</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۹</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">30</div>
+                                        <div class="qamari">٢٦</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۱۰</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">01</div>
+                                        <div class="qamari">٢٧</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۱۱</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">02</div>
+                                        <div class="qamari">٢٨</div>
+                                    </div>
+                                </div>
+                                <div class="day selected">
+                                    <div class="jalali col-12">۱۲</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">03</div>
+                                        <div class="qamari">٢٩</div>
+                                    </div>
+                                </div>
+                                <div class="day holiday">
+                                    <div class="jalali col-12">۱۳</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">04</div>
+                                        <div class="qamari">٣٠</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="week col-12 flex-container justifycontent-spacebetween">
+                                <div class="day">
+                                    <div class="jalali col-12">۱۴</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">05</div>
+                                        <div class="qamari">٠١</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۱۵</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">06</div>
+                                        <div class="qamari">٠٢</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۱۶</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">07</div>
+                                        <div class="qamari">٠٣</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۱۷</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">08</div>
+                                        <div class="qamari">٠٤</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۱۸</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">09</div>
+                                        <div class="qamari">٠٥</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۱۹</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">10</div>
+                                        <div class="qamari">٠٦</div>
+                                    </div>
+                                </div>
+                                <div class="day holiday">
+                                    <div class="jalali col-12">۲۰</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">11</div>
+                                        <div class="qamari">٠٧</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="week col-12 flex-container justifycontent-spacebetween">
+                                <div class="day">
+                                    <div class="jalali col-12">۲۱</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">12</div>
+                                        <div class="qamari">٠٨</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۲۲</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">13</div>
+                                        <div class="qamari">٠٩</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۲۳</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">14</div>
+                                        <div class="qamari">١٠</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۲۴</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">15</div>
+                                        <div class="qamari">١١</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۲۵</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">16</div>
+                                        <div class="qamari">١٢</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۲۶</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">17</div>
+                                        <div class="qamari">١٣</div>
+                                    </div>
+                                </div>
+                                <div class="day holiday">
+                                    <div class="jalali col-12">۲۷</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">18</div>
+                                        <div class="qamari">١٤</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="week col-12 flex-container justifycontent-spacebetween">
+                                <div class="day">
+                                    <div class="jalali col-12">۲۸</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">19</div>
+                                        <div class="qamari">١٥</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۲۹</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">20</div>
+                                        <div class="qamari">١٦</div>
+                                    </div>
+                                </div>
+                                <div class="day">
+                                    <div class="jalali col-12">۳۰</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">21</div>
+                                        <div class="qamari">١٧</div>
+                                    </div>
+                                </div>
+                                <div class="day disabled">
+                                    <div class="jalali col-12">۱</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">22</div>
+                                        <div class="qamari">١٨</div>
+                                    </div>
+                                </div>
+                                <div class="day disabled">
+                                    <div class="jalali col-12">۲</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">23</div>
+                                        <div class="qamari">١٩</div>
+                                    </div>
+                                </div>
+                                <div class="day disabled">
+                                    <div class="jalali col-12">۳</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">24</div>
+                                        <div class="qamari">٢٠</div>
+                                    </div>
+                                </div>
+                                <div class="day holiday disabled">
+                                    <div class="jalali col-12">۴</div>
+                                    <div class="col-12 flex-container justifycontent-spacearound">
+                                        <div class="miladi">25</div>
+                                        <div class="qamari">٢١</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 go-today">
+                                <span>برو به امروز</span>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="left col-7">
+                        <section class="events col-12">
+                            <h2>مناسب های ماه مهر</h2>
+                            <ol>
+                                <li class="event">
+                                    <span>1 مهر</span>
+                                    آغاز حمله مغول به ایران در پاییز 598 خورشیدی
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>۴ مهر</span>
+                                    روز گرامیداشت سربازان وطن
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>۶ مهر</span>
+                                    روز جهانی جهانگردی
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 27 September ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>1 مهر</span>
+                                    آغاز حمله مغول به ایران در پاییز 598 خورشیدی
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>۷ مهر</span>
+                                    روز آتش نشانی و ایمنی
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>۷ مهر</span>
+                                    سقوط هواپیمای حامل جمعی از فرماندهان جنگ (کلاهدوز، نامجو، فلاحی، فکوری، جهان
+                                    آرا) در سال 1360
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>۷ مهر</span>
+                                    روز بزرگداشت شمس تبریزی
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>۸ مهر</span>
+                                    روز بزرگداشت مولوی
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>9 مهر</span>
+                                    روز جهانی ناشنوایان
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 30 September ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>9 مهر</span>
+                                    روز جهانی ترجمه و مترجم
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 30 September ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>۱۰ مهر</span>
+                                    مهر روز،جشن مهرگان
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>10 مهر</span>
+                                    روز جهانی سالمندان
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 1 October ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>۱۳ مهر</span>
+                                    آغاز هفته جهانی فضا
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 4 October ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>14 مهر</span>
+                                    روز دامپزشکی
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>۱۴ مهر</span>
+                                    روز جهانی معلم
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 5 October ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>16 مهر</span>
+                                    روز ملی کودک
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>18 مهر</span>
+                                    روز جهانی پست
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 9 October ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>19 مهر</span>
+                                    روز جهانی مبارزه با حکم اعدام
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 10 October ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>20 مهر</span>
+                                    روز بزرگداشت حافظ
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>20 مهر</span>
+                                    روز جهانی دختر
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 11 October ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>21 مهر</span>
+                                    روز پیروزی کاوه و فریدون بر ضحاک
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>21 مهر</span>
+                                    ولادت امام حسن عسکری علیه السلام
+                                    <span style="white-space: nowrap"></span>
+                                    <i>[ ٨ ربيع الثاني ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>24 مهر</span>
+                                    روز جهانی عصای سفید
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 15 October ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>25 مهر</span>
+                                    روز جهانی غذا
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 16 October ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>26 مهر</span>
+                                    روز تربیت بدنی و ورزش
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>26 مهر</span>
+                                    روز جهانی ریشه کنی فقر
+                                    <span style="white-space: nowrap"></span>
+                                    <i dir="ltr">[ 17 October ]</i>
+                                </li>
+                                <li class="event">
+                                    <span>28 مهر</span>
+                                    زادروز ستارخان ملقب به سردار ملی و از سرداران جنبش مشروطه ایران
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                                <li class="event">
+                                    <span>29 مهر</span>
+                                    روز ملی کوهنورد
+                                    <span style="white-space: nowrap"></span>
+                                </li>
+                            </ol>
+                        </section>
+                    </section>
+                </section>
+                <section class="midwrapper col-12">
+                    <h2 class="col-12">تبدیل تاریخ</h2>
+                    <hr>
+                    <section class="date-conversion col-12">
+                        <div class="col-12 flex-container alignitems-center justifycontent-center">
+                            <div class="date-type">
+                                <label for="date-type" class="col-12">نوع تبدیل</label>
+                                <select name="date-type" id="date-type" class="col-12">
+                                    <option value="" selected="selected">خورشیدی (جلالی) به میلادی و قمری</option>
+                                    <option value="">میلادی به خورشیدی (جلالی) و قمری</option>
+                                    <option value="">قمری به خورشیدی (جلالی) و میلادی</option>
+                                </select>
+                            </div>
+                            <div class="day-select">
+                                <label for="day-select" class="col-12">روز</label>
+                                <select name="day-select" id="day-select" class="col-12">
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                    <option value="">6</option>
+                                    <option value="">7</option>
+                                    <option value="">8</option>
+                                    <option value="">9</option>
+                                    <option value="">10</option>
+                                    <option value="">11</option>
+                                    <option value="">12</option>
+                                    <option value="">13</option>
+                                    <option value="">14</option>
+                                    <option value="">15</option>
+                                    <option value="">16</option>
+                                    <option value="">17</option>
+                                    <option value="">18</option>
+                                    <option value="">19</option>
+                                    <option value="">20</option>
+                                    <option value="" selected="selected">21</option>
+                                    <option value="">22</option>
+                                    <option value="">23</option>
+                                    <option value="">24</option>
+                                    <option value="">25</option>
+                                    <option value="">26</option>
+                                    <option value="">27</option>
+                                    <option value="">28</option>
+                                    <option value="">29</option>
+                                    <option value="">30</option>
+                                    <option value="">31</option>
+                                </select>
+                            </div>
+                            <div class="month-select">
+                                <label for="month-select" class="col-12">ماه</label>
+                                <select name="month-select" id="month-select" class="col-12">
+                                    <option value="">فرودین-ماه اول</option>
+                                    <option value="">اردیبهشت-ماه دوم</option>
+                                    <option value="">خرداد-ماه سوم</option>
+                                    <option value="">تیر-ماه چهارم</option>
+                                    <option value="">مرداد-ماه پنجم</option>
+                                    <option value="">شهریور-ماه ششم</option>
+                                    <option value="" selected="selected">مهر-ماه هفتم</option>
+                                    <option value="">آبان-ماه هشتم</option>
+                                    <option value="">آذر-ماه نهم</option>
+                                    <option value="">دی-ماه دهم</option>
+                                    <option value="">بهمن-ماه یازدهم</option>
+                                    <option value="">اسفند-ماه دوازدهم</option>
+                                </select>
+                            </div>
+                            <div class="year">
+                                <label for="year" class="col-12">سال</label>
+                                <input type="number" placeholder="1403" maxlength="4" name="year" min="1200" max="1600"
+                                    id="year">
+                            </div>
+                            <div class="conversion-button col-4">
+                                <span>تبدیل</span>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="col-12 flex-container conversion-show alignitems-center">
+                        <div class="col-3 conversion-item">
+                            <div>
+                                <img src="icon-font-svg/icons8-zodiac-signs-66.svg" alt="zodiac"
+                                    class="responsive-image col-3">
+                                <h3>برج فلکی:</h3>
+                                <span class="col-8">میزان</span>
+                            </div>
+                        </div>
+                        <div class="col-3 conversion-item">
+                            <h3>خورشیدی:</h3>
+                            <span class="col-12">شنبه، ۲۱ مهر ۱۴۰۳</span>
+                            <span class="col-12">۱۴۰۳/۰۷/۲۱</span>
+                        </div>
+                        <div class="col-3 conversion-item">
+                            <h3>میلادی:</h3>
+                            <span class="col-12">Saturday, October 12, 2024</span>
+                            <span class="col-12">2024-10-12</span>
+                        </div>
+                        <div class="col-3 conversion-item">
+                            <h3>قمری:</h3>
+                            <span class="col-12">السبت، ٨ ربيع الثاني ١٤٤٦</span>
+                            <span class="col-12">۱۴۴۶/۰۴/۰۸</span>
+                        </div>
+                    </div>
+                    <div class="col-12 flex-container alignitems-center justifycontent-spacebetween age-event">
+                        <div class="col-6 age-calc">
+                            فاصله زمانی (سن) :0 روز
+                            <span>
+                                سال ۱۴۰۳ یک سال کبیسه است.
+                            </span>
+                        </div>
+                        <div class="col-3 go-today">
+                            <a href="#"><i class="fa-solid fa-angle-double-left"></i> مناسبتهای این روز</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="bottomwrapper col-12">
+                    <article>
+                        <h2>گردونه میترا</h2>
+                        <hr>
+                        <div class="col-12 flex-container">
+                            <img src="images/Swastika_iran.jpg" alt="گردونه میترا" title="گردونه میترا"
+                                class="responsive-image">
+                        </div>
+                        <div class="col-12 article-text">
+                            <span>
+                                گردنبندِ ایرانی «گردونه میترا» که در کاوش‌های باستان‌شناسی در کَلورَز گیلان پیدا شده
+                                است و دارای قدمت حدود ۳۰۰۰ ساله است. کَلوُرَز، یکی از روستاهای رستم‌آباد در گیلان
+                                است و در بخش مرکزی شهرستان رودبار قرار دارد.
+
+                                این گردنبند طلایی زیبا دارای سه نمادِ سواستیکا است. و نشان از رواجِ کاربرد نمادِ
+                                سواستیکا در ایرانِ باستان دارد.
+
+                                سواستیکا (卐 یا 卍) یا گردونه خورشید، یک واژه‌ی سانسکریت است که از دو پارِ "سو" به
+                                معنی "نیک" و "استی" به معنی "بودن" ، تشکل شده و معنای «هستی نیک» دارد؛ که در آئینِ
+                                مهر، نمادِ خورشید یا در آئینِ هندو نمادِ ایزدِ آفرینش است.
+                                در فرهنگ هندواروپایی، کاربردِ این نشان بر روی اشیا برای خوش اقبالی و نیک بختی بوده
+                                است. استفاده از این نشانِ باستانی برای هزاران سال نه تنها در ایران، بلکه در یونان و
+                                سایر تمدن ها متداول بوده‌است.
+                                این گردنبند باستانی در موزه ملی ایران نگهداری می‌شود.
+                            </span>
+                        </div>
+                    </article>
+                    <article class="col-12 new-version-placard flex-container">
+                        <div class="col-3 title">
+                            <h3>نسخه جدید تایم</h3>
+                        </div>
+                        <div class="col-9 content">
+                            <p>
+                                سایت تایم با فنآوری جدید در حال پیاده سازی است، هم اکنون این نسخه به صورت آزمایشی در
+                                آدرس <a href="https://www.new.time.ir" title="سایت جدید تایم">new.time.ir</a> در
+                                دسترس می‌باشد. نظرات و دیدگاه‌های شما، در توسعه و بهبود این نرم
+                                افزار یاری رسان خواهد بود.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="col-12 time-application flex-container">
+                        <div class="col-3 title flex-container alignitems-center justifycontent-center">
+                            <h3>اپلیکیشن Time.ir</h3>
+                        </div>
+                        <div class="col-9 content flex-container alignitems-center">
+                            <div class="col-9">
+                                <p>
+                                    اپلیکیشن سایت تایم، آماده‌ی استفاده‌ی شما عزیزان است، نسخه‌ی اندروید اپلیکیشن
+                                    تایم را می‌توانید از لینک روبرو دانلود کنید.
+                                </p>
+                            </div>
+                            <div class="col-3 download-box flex-container-column">
+                                <div class="download-button">
+                                    <a href="https://www.myket.ir/app/co.radcom.time" target="_blank"
+                                        class="flex-container alignitems-center">
+                                        <span class="col-9">دانلود از مایکت</span>
+                                        <i class="fa-brands fa-android col-3"></i>
+                                    </a>
+                                </div>
+                                <div class="download-button">
+                                    <a href="https://www.myket.ir/app/co.radcom.time" target="_blank"
+                                        class="flex-container alignitems-center">
+                                        <span class="col-9">دانلود از کافه بازار</span>
+                                        <i class="fa-solid fa-mobile col-3"></i>
+                                    </a>
+                                </div>
+                                <div class="download-button">
+                                    <a href="https://www.myket.ir/app/co.radcom.time" target="_blank"
+                                        class="flex-container alignitems-center">
+                                        <span class="col-9">دانلود مستقیم</span>
+                                        <i class="fa-solid fa-download col-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-12 print-cal-a3 flex-container">
+                        <div class="col-3 title">
+                            <h3>تقویم چاپی ۱۴۰۳</h3>
+                        </div>
+                        <div class="col-9 content flex-container alignitems-center">
+                            <div class="col-9">
+                                <p>
+                                    تقویم چاپی سال ۱۴۰۳ خورشیدی <strong>نسخه A3</strong>
+                                </p>
+                            </div>
+                            <div class="col-3 download-box flex-conta">
+                                <div class="download-button">
+                                    <a href="https://www.myket.ir/app/co.radcom.time" target="_blank"
+                                        class="flex-container alignitems-center">
+                                        <span class="col-9">دانلود نسخه A3</span>
+                                        <i class="fa-solid fa-file-arrow-down col-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="col-12 print-cal-a4 flex-container">
+                        <div class="col-3 title">
+                            <h3>تقویم چاپی ۱۴۰۳</h3>
+                        </div>
+                        <div class="col-9 content content flex-container alignitems-center">
+                            <div class="col-9">
+                                <p>
+                                    تقویم چاپی سال ۱۴۰۳ خورشیدی <strong>نسخه A4</strong>
+                                </p>
+                            </div>
+                            <div class="col-3 download-box flex-container-column">
+                                <div class="download-button">
+                                    <a href="https://www.myket.ir/app/co.radcom.time" target="_blank"
+                                        class="flex-container alignitems-center">
+                                        <span class="col-9">دانلود نسخه A3</span>
+                                        <i class="fa-solid fa-file-arrow-down col-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </main>
+        <footer class="col-12">
+            <a href="#header" class="go-top flex-container alignitems-center justifycontent-center">
+                <i class="fa-solid fa-angle-up"></i>
+            </a>
+            <section class="container">
+                <ul class="col-12 flex-container alignitems-center aligncontent-center justifycontent-center">
+                    <li>ساعت و تقویم ایران</li>
+                    <li>تقویم سالیانه</li>
+                    <li>درباره تقویم جلالی</li>
+                    <li>فهرست کتابهای تایم</li>
+                    <li>انتقادها و پیشنهادها</li>
+                    <li>تاریخ امروز</li>
+                </ul>
+                <p class="col-12">
+                    خدمات طراحی سایت ، هاست ، ثبت دامنه و سرور مجازی : رادکام
+                </p>
+                <a href="https://www.radcom.co" title="رادکام" class="col-12">
+                    <img src="icon-font-svg/10692_orig.svg" alt="لوگو رادکام" class="responsive-image radcom-logo">
+                </a>
+            </section>
+        </footer>
+    </main>
+</body>
+
+</html>
